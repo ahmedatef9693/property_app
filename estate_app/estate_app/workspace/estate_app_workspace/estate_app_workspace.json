@@ -1,0 +1,67 @@
+{
+ "cards_label": "links",
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-06-04 09:56:38.430058",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Estate App WorkSpace",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "properties report",
+   "link_to": "properties report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-06-04 14:10:47.629044",
+ "modified_by": "Administrator",
+ "module": "Estate App",
+ "name": "Estate App WorkSpace",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "property doctype",
+   "link_to": "Property",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Property Amenity Detail doctype",
+   "link_to": "Property Amenity Detail",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Property Amenity Item doctype",
+   "link_to": "Property Amenity Item",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Property Type doctype",
+   "link_to": "Property Type",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Agent doctype",
+   "link_to": "Agent",
+   "type": "DocType"
+  }
+ ],
+ "shortcuts_label": "Shortcuts"
+}

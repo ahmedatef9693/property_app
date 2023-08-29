@@ -1,0 +1,28 @@
+<h2 class="text-center">{%= __("Statement of Account") %}</h2>
+<h4 class="text-center">propery_here{% if (filters.property){ %} {%= filters.property %} {% } %}</h4>
+
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 12%">{%= __("id") %}</th>
+            <th style="width: 15%">{%= __("property_name") %}</th>
+            <th style="width: 25%">{%= __("Address") %}</th>
+            <th style="width: 15%">{%= __("Type") %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for(var i=0, l=data.length-1; i<l; i++) { %}
+        <tr>
+            <td>{%= i+1 %}</td>
+            <td>{%= data[i].id %}</td>
+            <td>{%= data[i].property_name %}</td>
+            <td>{%= data[i].address %}</td>
+            <td>{%= data[i].type %}</td>
+        </tr>
+        {% } %}
+    </tbody>
+</table>
