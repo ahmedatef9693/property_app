@@ -8,9 +8,9 @@ from frappe import _
 def execute(filters=None):
 	columns, data ,report_summary= [], [],[]
 	calc_value = 500+600
-	
-	report_summary = get_report_summary(filters=filters,calc_value =calc_value)
-	return getColumns(),  getData(filters),'',[],report_summary
+	data , properties_count= getData(filters=filters)
+	report_summary = get_report_summary(filters=filters,calc_value =properties_count)
+	return getColumns(),  data,'',[],report_summary
 
 
 
@@ -20,18 +20,18 @@ def get_report_summary(filters,calc_value):
 	return [
 		{
 			"value": calc_value,
-			"label": ("المجموع الكلي"),
-			"datatype": "Currency",
+			"label": ("Total Properties"),
+			"datatype": "Int",
 		},
 
 	]
 
 def getColumns():
 	return[
-		"ID:Link/Property:100",
+		"name:Link/Property:100",
 		"property name:Data:80",
 		"Address:Data:80",
-		"Type:Data:50",
+		"property_type:Data:50",
 		"status:Data:50",
 		"Price:Currency:100",
 		"Discount:Currency:20",
@@ -52,25 +52,24 @@ def getData(filters):
 	if(filters.get('status')):
 		conditions += f"And status = '{filters.get('status')}'" 
 
-
-	return frappe.db.sql(f"""
+	data = frappe.db.sql(f"""
 	select 
-	name,
-	property_name,
-	address,
-	property_type,
-	status,
-	property_price,
-	discount,
-	grand_total,
-	agent,
-	agent_name
-	from `tabProperty`
+		name,	  
+		property_name,
+		address,
+		property_type,
+		status,
+		property_price,
+		discount,
+		grand_total,
+		agent,
+		agent_name
+	from 
+		`tabProperty`
 	where 
 		creation between '{filters.get('from_date')}' And '{filters.get('to_date')}'
 	{conditions}
 	;
-	
-	
-	
-	""")
+	""",as_dict=True)
+	properties_count = len(data)
+	return data , properties_count

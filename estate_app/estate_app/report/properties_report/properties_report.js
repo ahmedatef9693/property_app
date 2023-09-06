@@ -10,7 +10,7 @@ frappe.query_reports["properties report"] = {
       fieldtype: "Link",
       options: "Property",
       width: 100,
-      reqd: 1,
+      reqd: 0,
     },
     {
       fieldname: "from_date",
