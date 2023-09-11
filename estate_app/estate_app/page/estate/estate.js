@@ -17,10 +17,12 @@ MyPage = Class.extend({
   // this here stands for frappe.pages.estate
   make: function () {
     // let me = $(this);
+
     $(frappe.render_template(frappe.estate_app_mypage.body, this)).appendTo(
       this.page.main
     );
     total();
+    chart();
     document
       .querySelector("#refresh-total-price")
       .addEventListener("click", () => {
@@ -136,6 +138,8 @@ let body = `
 		</div></div>
 			</div>
 
+		<div id="mychart"></div>
+
 `;
 
 frappe.estate_app_mypage = {
@@ -157,4 +161,65 @@ let total = function () {
       $("#total-price")[0].innerText = currency(r.message);
     },
   });
+};
+
+let chart = function () {
+  const data = {
+    labels: [
+      "12am-3am",
+      "3am-6pm",
+      "6am-9am",
+      "9am-12am",
+      "12pm-3pm",
+      "3pm-6pm",
+      "6pm-9pm",
+      "9am-12am",
+    ],
+    datasets: [
+      {
+        name: "Some Data",
+        chartType: "bar",
+        values: [25, 40, 30, 35, 8, 52, 17, -4],
+      },
+      {
+        name: "Another Set",
+        chartType: "bar",
+        values: [25, 50, -10, 15, 18, 32, 27, 14],
+      },
+      {
+        name: "Yet Another",
+        chartType: "bar",
+        values: [15, 20, -3, -15, 58, 12, -17, 37],
+      },
+    ],
+    // ymarkers is the broken line
+    yMarkers: [{ label: "Marker", value: 70, options: { labelPos: "left" } }],
+    yRegions: [
+      { label: "Region", start: -10, end: 50, options: { labelPos: "right" } },
+    ],
+  };
+
+  const chart = new frappe.Chart("#mychart", {
+    // or a DOM element,
+    // new Chart() in case of ES6 module with above usage
+    title: "Estate Price Chart",
+    data: data,
+    type: "axis-mixed", // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+    height: 300,
+    colors: ["red", "blue", "green"],
+    axisOptions: {
+      xAxisMode: "tick",
+      xIsSeries: true,
+    },
+    barOptions: {
+      stacked: false,
+      spaceRatio: 0.5,
+    },
+    tooltipOptions: {
+      formatTooltipX: (d) => (d + "").toUpperCase(),
+      formatTooltipY: (d) => d + " pts",
+    },
+  });
+  //   Download The Chart
+  //   chart.export();
 };
