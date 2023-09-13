@@ -63,76 +63,8 @@ let body = `
 				</div></div>
 		    <div class="widget-footer">
 		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Salary Structure">
-			<div class="widget-head">
-				<div class="widget-label">
-					<div class="widget-title"><div class="number-label">Total Salary Structure</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">0</div>
-				</div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Incentive Given(Last month)">
-			<div class="widget-head">
-				<div class="widget-label">
-					<div class="widget-title"><div class="number-label">Total Incentive Given(Last month)</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">$ 0.00 </div>
-				</div></div>
-		    <div class="widget-footer">
-		    </div>
-		</div><div class="widget         widget-shadow    number-widget-box" data-widget-name="Total Outgoing Salary(Last month)">
-			<div class="widget-head">
-				<div class="widget-label">
-					<div class="widget-title"><div class="number-label">Total Outgoing Salary(Last month)</div></div>
-					<div class="widget-subtitle"></div>
-				</div>
-				<div class="widget-control"><div class="card-actions dropdown pull-right">
-				<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				...
-				</a>
-				<ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-					<li class="dropdown-item">
-									<a data-action="action-refresh">Refresh</a>
-								</li><li class="dropdown-item">
-									<a data-action="action-edit">Edit</a>
-								</li>
-				</ul>
-			</div></div>
-			</div>
-			<div class="widget-body"><div class="widget-content">
-				<div class="number" style="color:undefined">$ 0.00 </div>
-				</div></div>
+		</div>			</div>
+
 		    <div class="widget-footer">
 		    </div>
 		</div></div>
