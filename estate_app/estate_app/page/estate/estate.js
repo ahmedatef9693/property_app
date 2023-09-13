@@ -155,71 +155,72 @@ let currency = function (number) {
 
 let total = function () {
   frappe.call({
-    method: "estate_app.estate_app.page.estate.estate.get_total_price", //dotted path to server method
+    method: "estate_app.estate_app.page.estate.estate.get_total_price",
     callback: function (r) {
-      console.log(r.message);
       $("#total-price")[0].innerText = currency(r.message);
     },
   });
 };
 
 let chart = function () {
-  const data = {
-    labels: [
-      "12am-3am",
-      "3am-6pm",
-      "6am-9am",
-      "9am-12am",
-      "12pm-3pm",
-      "3pm-6pm",
-      "6pm-9pm",
-      "9am-12am",
-    ],
-    datasets: [
-      {
-        name: "Some Data",
-        chartType: "bar",
-        values: [25, 40, 30, 35, 8, 52, 17, -4],
-      },
-      {
-        name: "Another Set",
-        chartType: "bar",
-        values: [25, 50, -10, 15, 18, 32, 27, 14],
-      },
-      {
-        name: "Yet Another",
-        chartType: "bar",
-        values: [15, 20, -3, -15, 58, 12, -17, 37],
-      },
-    ],
-    // ymarkers is the broken line
-    yMarkers: [{ label: "Marker", value: 70, options: { labelPos: "left" } }],
-    yRegions: [
-      { label: "Region", start: -10, end: 50, options: { labelPos: "right" } },
-    ],
-  };
+  let labels = [];
+  let prices = [];
+  frappe.call({
+    method: "estate_app.estate_app.page.estate.estate.get_total_for_status",
+    callback: function (r) {
+      r.message.forEach((element) => {
+        labels.push(element.status);
+        prices.push(element.status_total);
+      });
+      console.log(prices);
+      console.log(labels);
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            name: "Some Data",
+            chartType: "bar",
+            values: [prices[0], prices[1], prices[2]],
+          },
+        ],
+        // ymarkers is the broken line
+        yMarkers: [
+          { label: "Marker", value: 50000000, options: { labelPos: "left" } },
+        ],
+        yRegions: [
+          {
+            label: "Region",
+            start: -20,
+            end: 50000000,
+            options: { labelPos: "right" },
+          },
+        ],
+      };
 
-  const chart = new frappe.Chart("#mychart", {
-    // or a DOM element,
-    // new Chart() in case of ES6 module with above usage
-    title: "Estate Price Chart",
-    data: data,
-    type: "axis-mixed", // or 'bar', 'line', 'scatter', 'pie', 'percentage'
-    height: 300,
-    colors: ["red", "blue", "green"],
-    axisOptions: {
-      xAxisMode: "tick",
-      xIsSeries: true,
-    },
-    barOptions: {
-      stacked: false,
-      spaceRatio: 0.5,
-    },
-    tooltipOptions: {
-      formatTooltipX: (d) => (d + "").toUpperCase(),
-      formatTooltipY: (d) => d + " pts",
+      const chart = new frappe.Chart("#mychart", {
+        // or a DOM element,
+        // new Chart() in case of ES6 module with above usage
+        title: "Estate Price Chart",
+        data: data,
+        type: "axis-mixed", // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+        height: 300,
+        colors: ["red", "blue", "green"],
+        axisOptions: {
+          xAxisMode: "tick",
+          xIsSeries: true,
+        },
+        barOptions: {
+          stacked: false,
+          spaceRatio: 0.5,
+        },
+        tooltipOptions: {
+          formatTooltipX: (d) => (d + "").toUpperCase(),
+          formatTooltipY: (d) => d + " pts",
+        },
+      });
     },
   });
+
   //   Download The Chart
   //   chart.export();
 };
