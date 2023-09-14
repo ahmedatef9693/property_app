@@ -15,7 +15,7 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/estate_app/css/estate_app.css"
-# app_include_js = "/assets/estate_app/js/estate_app.js"
+app_include_js = "/assets/estate_app/js/desk.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/estate_app/css/estate_app.css"
@@ -33,7 +33,7 @@ app_license = "MIT"
 
 # include js in doctype views
 doctype_js = {
-    "Expense Claim" : "public/js/expense_claim.js",
+    # "Expense Claim" : "public/js/expense_claim.js",
     # "Sales Invoice":"public/js/sales_Invoice.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
