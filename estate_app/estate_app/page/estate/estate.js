@@ -104,8 +104,6 @@ let chart = function () {
         labels.push(element.status);
         prices.push(element.status_total);
       });
-      console.log(prices);
-      console.log(labels);
       const data = {
         labels: labels,
         datasets: [
