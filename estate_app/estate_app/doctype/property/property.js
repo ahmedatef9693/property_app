@@ -116,6 +116,27 @@ frappe.ui.form.on("Property", {
     }
     // }
   },
+  map(frm) {
+    let map_data = "";
+    try {
+      map_data = JSON.parse(frm.doc.map).features[0].geometry;
+    } catch (err) {
+      console.log(err);
+    }
+    if (map_data && map_data.type === "Point") {
+      let longitude = map_data.coordinates[0];
+      let latitude = map_data.coordinates[1];
+      console.log(longitude, latitude);
+      //api call
+      frappe.call({
+        type: "GET",
+        url: `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`,
+        callback: function (r) {
+          frm.set_value("address", r.display_name);
+        },
+      });
+    }
+  },
 });
 
 frappe.ui.form.on("Property Amenity Detail", {
@@ -135,7 +156,7 @@ frappe.ui.form.on("Property Amenity Detail", {
     // console.log(cdt);
 
     deletedList.push(cdn);
-    console.log(deletedList);
+    // console.log(deletedList);
     // console.log(frappe.get_doc(cdt, cdn));
     // let row = locals[frm.doctype][frm.docname];
     // console.log(row);

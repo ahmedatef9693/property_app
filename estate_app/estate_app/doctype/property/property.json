@@ -8,12 +8,15 @@
  "engine": "InnoDB",
  "field_order": [
   "property_name",
-  "address",
   "city",
   "property_type",
   "property_price",
   "discount",
+  "address",
   "column_break_ibncr",
+  "section_break_ccrbi",
+  "map",
+  "section_break_px4rl",
   "image",
   "agent",
   "agent_name",
@@ -128,11 +131,24 @@
    "label": "City",
    "options": "City",
    "reqd": 1
+  },
+  {
+   "fieldname": "map",
+   "fieldtype": "Geolocation",
+   "label": "Map"
+  },
+  {
+   "fieldname": "section_break_px4rl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ccrbi",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-22 11:22:50.798757",
+ "modified": "2023-09-21 00:41:31.309295",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

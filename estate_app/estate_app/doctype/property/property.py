@@ -3,7 +3,6 @@
 
 import frappe
 from frappe.model.document import Document
-
 class Property(Document):
     pass
     
@@ -65,3 +64,7 @@ class Property(Document):
 	# 	# print('\n')
 	# 	# print('\n')
 	# 	# frappe.throw(f'you are not allowed to save <b>{self.name}</b>')
+
+
+
+
