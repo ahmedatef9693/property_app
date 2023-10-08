@@ -10,10 +10,10 @@
   "property_name",
   "city",
   "property_type",
+  "column_break_ibncr",
   "property_price",
   "discount",
   "address",
-  "column_break_ibncr",
   "section_break_ccrbi",
   "map",
   "section_break_px4rl",
@@ -26,7 +26,8 @@
   "section_break_i7aj0",
   "amenities",
   "pricing_section",
-  "grand_total"
+  "grand_total",
+  "amended_from"
  ],
  "fields": [
   {
@@ -144,11 +145,21 @@
   {
    "fieldname": "section_break_ccrbi",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Property",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-09-21 00:41:31.309295",
+ "modified": "2023-10-08 12:12:51.586347",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

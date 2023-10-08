@@ -9,6 +9,7 @@
  "field_order": [
   "email",
   "agent_name",
+  "column_break_ukpzv",
   "phone",
   "image"
  ],
@@ -39,11 +40,15 @@
    "fieldname": "image",
    "fieldtype": "Attach Image",
    "label": "Image"
+  },
+  {
+   "fieldname": "column_break_ukpzv",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-28 01:03:00.877509",
+ "modified": "2023-10-08 15:12:53.229235",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Agent",
