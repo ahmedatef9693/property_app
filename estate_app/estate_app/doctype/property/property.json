@@ -9,6 +9,7 @@
  "field_order": [
   "property_name",
   "city",
+  "is_sold",
   "property_type",
   "column_break_ibncr",
   "property_price",
@@ -154,12 +155,18 @@
    "options": "Property",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_sold",
+   "fieldtype": "Check",
+   "label": "Is Sold"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-08 12:12:51.586347",
+ "modified": "2023-10-12 16:32:55.394075",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

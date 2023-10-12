@@ -1,0 +1,4 @@
+
+[post_model_sync]
+estate_app.estate_app.doctype.property.patches.property_patch
+
