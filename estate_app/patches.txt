@@ -1,4 +1,7 @@
+[pre_model_sync]
+
+
 
 [post_model_sync]
-estate_app.estate_app.doctype.property.patches.property_patch
+estate_app.estate_app.doctype.property.patches.property_patchv2
 
