@@ -1,0 +1,32 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Vehicle Type",
+  "modified": "2023-10-20 16:06:43.014178",
+  "name": "Two-Wheeler",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "title": "Two-Wheeler"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Vehicle Type",
+  "modified": "2023-10-20 16:07:11.109054",
+  "name": "Four-Wheeler",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "title": "Four-Wheeler"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Vehicle Type",
+  "modified": "2023-10-20 16:07:31.784099",
+  "name": "Heavy Truck",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "title": "Heavy Truck"
+ }
+]

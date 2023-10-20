@@ -12,7 +12,6 @@ class CustomProperty(Property):
 
 
 
-
 class CustomExpenseClaim(ExpenseClaim):
     def on_update(self):
         frappe.msgprint(f"{self.name} document updated")

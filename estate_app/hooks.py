@@ -34,7 +34,7 @@ app_include_js = "/assets/estate_app/js/desk.js"
 # include js in doctype views
 doctype_js = {
     # "Expense Claim" : "public/js/expense_claim.js",
-    # "Sales Invoice":"public/js/sales_Invoice.js",
+    "Sales Invoice":"public/js/sales_invoice.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -211,3 +211,28 @@ user_data_fields = [
 #	"estate_app.auth.validate"
 # ]
 
+fixtures =[
+    {
+        "dt":"Custom Field",
+        "filters":{
+            "dt":"Vehicle"
+		}
+	},
+    {
+        "dt":"Vehicle Type"
+	}
+
+]
+# bench --site {site_name} export-fixtures
+# fixtures = [{
+#         "dt": ("Property Setter"),
+#         "filters": [["doc_type", "in", ("Doctype1","Doctype2")],
+#                     ["name","in",(
+#                         "property_setter1_name",
+#                         "property_setter2_name",
+
+#                         )]
+
+#                     ]
+#     },
+# ]
