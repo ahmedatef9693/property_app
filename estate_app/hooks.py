@@ -16,7 +16,9 @@ app_license = "MIT"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/estate_app/css/estate_app.css"
 app_include_js = "/assets/estate_app/js/desk.js"
-
+# app_include_js = [
+    # "/assets/estate_app/js/desk.js",
+# ]
 # include js, css files in header of web template
 # web_include_css = "/assets/estate_app/css/estate_app.css"
 # web_include_js = "/assets/estate_app/js/estate_app.js"
@@ -35,6 +37,7 @@ app_include_js = "/assets/estate_app/js/desk.js"
 doctype_js = {
     # "Expense Claim" : "public/js/expense_claim.js",
     "Sales Invoice":"public/js/sales_invoice.js",
+    "Batch":"public/js/batch.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -128,24 +131,14 @@ doc_events = {
 
 # Scheduled Tasks
 # ---------------
-
-# scheduler_events = {
-#	"all": [
-#		"estate_app.tasks.all"
-#	],
-#	"daily": [
-#		"estate_app.tasks.daily"
-#	],
-#	"hourly": [
-#		"estate_app.tasks.hourly"
-#	],
-#	"weekly": [
-#		"estate_app.tasks.weekly"
-#	]
-#	"monthly": [
-#		"estate_app.tasks.monthly"
-#	]
-# }
+# Migration Needed
+scheduler_events = {
+	"cron": {
+    "* * * * *":[
+		"estate_app.tasks.cron"
+	]
+    }
+}
 
 # Testing
 # -------
